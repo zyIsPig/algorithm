@@ -6,7 +6,7 @@ import org.springframework.core.annotation.Order;
 
 public interface BuyerService {
 
-    public void register();
+    public void register(Buyer buyer);
 
 
     /**
@@ -14,9 +14,11 @@ public interface BuyerService {
      *
      */
 
-    public void login(String username,String password);
+    public boolean login(String username,String password);
 
     public boolean changePassword(Buyer buyer);
+
+    public Buyer findByBuyername(String buyername);
 
     /**
      * 购物车
