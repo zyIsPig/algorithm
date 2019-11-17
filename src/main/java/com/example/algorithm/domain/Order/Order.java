@@ -22,7 +22,8 @@ public class Order {
     @NotNull
     private String time;
 
-
+    @NotNull
+    private int test;
 
 
 }
