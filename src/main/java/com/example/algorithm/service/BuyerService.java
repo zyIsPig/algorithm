@@ -43,11 +43,11 @@ public interface BuyerService {
      * 交易
      * userTrade:   提交购买申请
      */
-    //public void userTrade(Buyer buyer,Algorithm algorithm);
+    //public void userTrade(BuyerRepository buyer,Algorithm algorithm);
 
-//    public void Trade(Buyer buyer,Algorithm algorithm);
+//    public void Trade(BuyerRepository buyer,Algorithm algorithm);
 
-//    public void refund(Buyer buyer, Order order);
+//    public void refund(BuyerRepository buyer, Order order);
 
 
 
