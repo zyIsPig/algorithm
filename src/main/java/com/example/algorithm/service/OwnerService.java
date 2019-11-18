@@ -4,13 +4,23 @@ import com.example.algorithm.domain.Algorithm.Algorithm;
 import com.example.algorithm.domain.User.Owner;
 
 public interface OwnerService {
+    /**
+     * 商家注册
+     * @param owner
+     */
+    void register(Owner owner);
 
+    /**
+     * 商家登录
+     * @param owner
+     */
+    void login(Owner owner);
 
-    public void publishAlgorithm(Owner owner, Algorithm algorithm);
-
-    public void deleteAlgorithm(Owner owner,Algorithm algorithm);
-
-    public void updateAlgorithm(Owner owner,Algorithm algorithm);
+    /**
+     * 修改密码
+     * @param owner
+     */
+    void changePassword(Owner owner);
 
 
 }

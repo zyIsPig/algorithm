@@ -4,19 +4,36 @@ import com.example.algorithm.domain.Algorithm.Algorithm;
 import com.example.algorithm.domain.User.Buyer;
 import org.springframework.core.annotation.Order;
 
-public interface BuyerService {
+import javax.servlet.http.HttpSession;
 
+public interface BuyerService {
+    /**
+     * 注册一个新用户
+     * @param buyer
+     */
     public void register(Buyer buyer);
 
 
     /**
-     *
+     * 用户登录
      *
      */
-
     public boolean login(String username,String password);
 
+    /**
+     * 修改密码
+     * @param buyer
+     * @return
+     */
     public boolean changePassword(Buyer buyer);
+
+    /**
+     * 更新用户信息
+     * @param buyer
+     * @param httpSession
+     * @return
+     */
+    Buyer  updateBuyerInfo(Buyer buyer, HttpSession httpSession);
 
     public Buyer findByBuyername(String buyername);
 
@@ -50,9 +67,6 @@ public interface BuyerService {
 //    public void Trade(Buyer buyer,Algorithm algorithm);
 
 //    public void refund(Buyer buyer, Order order);
-
-
-
 
 
 

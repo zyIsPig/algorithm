@@ -13,6 +13,10 @@ public interface AlgorithmService {
      */
     public void register(Buyer buyer);
 
+    /**
+     * 买家删除关注列表
+     * @param buyer
+     */
     public void remove(Buyer buyer);
 
 
