@@ -1,7 +1,7 @@
 package com.example.algorithm.service;
 
-import com.example.algorithm.domain.Algorithm.Algorithm;
-import com.example.algorithm.domain.User.Buyer;
+import com.example.algorithm.domain.Algorithm;
+import com.example.algorithm.domain.Buyer;
 
 import java.util.List;
 
@@ -13,6 +13,10 @@ public interface AlgorithmService {
      */
     public void register(Buyer buyer);
 
+    /**
+     * 买家删除关注列表
+     * @param buyer
+     */
     public void remove(Buyer buyer);
 
 
