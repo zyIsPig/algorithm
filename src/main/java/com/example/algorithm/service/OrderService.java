@@ -1,8 +1,8 @@
 package com.example.algorithm.service;
 
-import com.example.algorithm.domain.Algorithm.Algorithm;
-import com.example.algorithm.domain.Order.Order;
-import com.example.algorithm.domain.User.Buyer;
+import com.example.algorithm.domain.Algorithm;
+import com.example.algorithm.domain.Order;
+import com.example.algorithm.domain.Buyer;
 
 public interface OrderService {
 

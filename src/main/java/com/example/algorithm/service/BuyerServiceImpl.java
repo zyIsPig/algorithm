@@ -1,7 +1,5 @@
 package com.example.algorithm.service;
 
-import com.example.algorithm.domain.User.Buyer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

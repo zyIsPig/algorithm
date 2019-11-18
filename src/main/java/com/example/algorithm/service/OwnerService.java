@@ -1,7 +1,6 @@
 package com.example.algorithm.service;
 
-import com.example.algorithm.domain.Algorithm.Algorithm;
-import com.example.algorithm.domain.User.Owner;
+import com.example.algorithm.domain.Owner;
 
 public interface OwnerService {
     /**

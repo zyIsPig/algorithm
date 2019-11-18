@@ -1,8 +1,7 @@
 package com.example.algorithm.service;
 
-import com.example.algorithm.domain.Algorithm.Algorithm;
-import com.example.algorithm.domain.User.Buyer;
-import org.springframework.core.annotation.Order;
+import com.example.algorithm.domain.Algorithm;
+import com.example.algorithm.domain.Buyer;
 
 import javax.servlet.http.HttpSession;
 
