@@ -16,7 +16,6 @@ public interface AlgorithmService {
     public void remove(Buyer buyer);
 
 
-
     public void notify(List<Buyer> list);
 
     /**
