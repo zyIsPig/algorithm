@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/semantic.min.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/jquary-3.4.1.min.js}"></script>
+    <script th:src="@{/js/semantic.min.js}"></script>
+    <title>Login</title>
+</head>
+
+<h1 class="ui header">Algorithms Store</h1>
+<h2 class="ui header">Sign In</h2>
+<form th:action="userSuccessfullyLogin" method="post">
+    <label for="nameId">Username:</label>
+    <br>
+    <input type="text" name="username" id="nameId"
+           th:value="${username}">
+    <br>
+    <label for="passwordId">Password:</label>
+    <br>
+    <input type="password" name="password" id="passwordId" >
+    <br>
+    <button class="ui primary button">Login</button>
+</form>
+
+<p th:text="${errorMsg}">Error message is here</p>
+
+<a href="./userFindPassword">Forget your password?</a><br>
+<span>New to us?</span><a href="./userRegister">Sign Up</a>
+<br>
+<a href="./shopkeeperLogin">Shopkeeper Login</a>
+
+
+
+</body>
+</html>

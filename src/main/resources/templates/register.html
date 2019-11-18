@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Login Example - Semantic</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/site.css}">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/container.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/image.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/menu.css}">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/divider.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/segment.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/input.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/button.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/message.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/icon.css}">
+
+    <script th:src="@{/js/jquary-3.4.1.min.js}"></script>
+    <script th:src="@{/css/form.js}"></script>
+    <script th:src="@{/css/transition.js}"></script>
+
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+        body > .grid {
+            height: 100%;
+        }
+        .image {
+            margin-top: -100px;
+        }
+        .column {
+            max-width: 450px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal image header">
+            <img src="assets/images/logo.png" class="image">
+            <div class="content">
+                Sign Up
+            </div>
+        </h2>
+        <form class="ui large form" th:action="register" method="post">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="confirmPassword" name="confirmPassword" placeholder="confirmPassword">
+                    </div>
+                </div>
+
+                <p th:text="${errorMsg}"></p>
+                <button class="ui fluid large teal submit button">Register</button>
+            </div>
+
+            <div class="ui error message">
+
+            </div>
+
+        </form>
+
+        <div class="ui message">
+            Already have an account? <a href="./login">Login</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>
