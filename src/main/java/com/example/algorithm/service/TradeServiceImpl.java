@@ -1,4 +1,4 @@
 package com.example.algorithm.service;
 
-public class OwnerServiceImpl {
+public class TradeServiceImpl {
 }
