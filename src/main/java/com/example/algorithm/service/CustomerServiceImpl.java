@@ -4,6 +4,7 @@ import com.example.algorithm.dao.CustomerDaoImp;
 import com.example.algorithm.dao.ShoppingCartDapImp;
 import com.example.algorithm.entity.Algorithm;
 import com.example.algorithm.entity.Customer;
+import com.example.algorithm.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public boolean login(String username, String password) {
         boolean flag = false;
-        if (customerDaoImp.login(username, password) == 1){
+        if (customerDaoImp.login(username, MD5Util.string2MD5(password)) == 1){
             flag = true;
         }
         return flag;
@@ -34,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
     public boolean changePassword(Customer customer, String password) {
         boolean flag = false;
 
-        if (customerDaoImp.updatePassword(customer.getId(), password)==1){
+        if (customerDaoImp.updatePassword(customer.getId(), MD5Util.string2MD5(password))==1){
             flag = true;
         }
 
