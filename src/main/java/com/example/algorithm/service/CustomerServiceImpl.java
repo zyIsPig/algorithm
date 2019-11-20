@@ -1,6 +1,7 @@
 package com.example.algorithm.service;
 
 import com.example.algorithm.dao.CustomerDaoImp;
+import com.example.algorithm.dao.ShoppingCartDapImp;
 import com.example.algorithm.entity.Algorithm;
 import com.example.algorithm.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpSession;
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerDaoImp customerDaoImp;
+    @Autowired
+    ShoppingCartDapImp shoppingCartDapImp;
 
     @Override
     public void register(Customer customer) {
@@ -51,21 +54,23 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addToShoppingCar(Customer customer, Algorithm algorithm) {
-
+        long cartID = shoppingCartDapImp.getCartIdbyCustomer(customer.getId());
+        shoppingCartDapImp.addItem(cartID, algorithm.getId());
     }
 
     @Override
-    public void removeFromShoppingCar(Customer customer, long id) {
-
+    public void removeFromShoppingCar(Customer customer, Algorithm algorithm) {
+        shoppingCartDapImp.deleteItem(shoppingCartDapImp.getCartIdbyCustomer(customer.getId()), algorithm.getId());
     }
+//
+//    @Override
+//    public void collect(Customer customer, Algorithm algorithm) {
+//
+//    }
+//
+//    @Override
+//    public void removeFromCollectList(Customer customer, int id) {
+//
+//    }
 
-    @Override
-    public void collect(Customer customer, Algorithm algorithm) {
-
-    }
-
-    @Override
-    public void removeFromCollectList(Customer customer, int id) {
-
-    }
 }

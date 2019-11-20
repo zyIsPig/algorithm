@@ -29,7 +29,7 @@ public interface CustomerService {
     /**
      * 更新用户信息
      * @param customer
-     * @param httpSession
+     * @param info
      * @return
      */
     Customer  updateCustomerInfo(Customer customer, String info);
@@ -44,7 +44,7 @@ public interface CustomerService {
     public void addToShoppingCar(Customer customer, Algorithm algorithm);
 
 
-    public void removeFromShoppingCar(Customer customer,long id);
+    public void removeFromShoppingCar(Customer customer,Algorithm algorithm);
 
     /**
      * 收藏夹
@@ -52,9 +52,9 @@ public interface CustomerService {
      * 与上相同
      *
      */
-    public  void collect (Customer customer,Algorithm algorithm);
+//    public  void collect (Customer customer,Algorithm algorithm);
 
-    public void removeFromCollectList(Customer customer,int id);
+ //   public void removeFromCollectList(Customer customer,int id);
 
 
     /**
