@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add One Parking Record</title>
+</head>
+<body>
+<h2>Adding new Parking Record</h2>
+<form th:action="@{/parkingRecord}" th:object="${parkingRecord}"
+      method="post">
+    <input type="hidden" th:value="*{id}" name="id">
+    <label for="licensePlateNumberId">License Plate Number:</label>
+    <input type="text" name="licensePlateNumber" id="licensePlateNumberId"
+           th:field="*{licensePlateNumber}" >
+    <br>
+    <label for="entranceNumberId">Entrance Number:</label>
+    <input type="text" name="entranceNumber" id="entranceNumberId" th:field="*{entranceNumber}">
+    <br>
+    <label for="dateId">Date:</label>
+    <input type="text" name="date" id="dateId"
+           th:field="*{date}">
+    <br>
+    <label for="arrivalTimeId">Arrival Time:</label>
+    <input type="text" name="arrivalTime" id="arrivalTimeId"
+           th:field="*{arrivalTime}">
+    <br>
+    <label for="staffNameId">Staff Name:</label>
+    <input type="text" name="staffName" id="staffNameId"
+           th:field="*{staffName}">
+    <br>
+    <label for="statusId">Status:</label>
+    <select name="status" id="statusId" th:field="*{status}">
+        <option value="0"
+                th:selected="(*{status}=='0')">In</option>
+        <option value="1"
+                th:selected="(*{status}=='1')">Out</option>
+    </select>
+    <br>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

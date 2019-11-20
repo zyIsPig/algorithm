@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Record List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+</head>
+<body>
+<div>
+    <h2 style="text-align: center">Parking Record List</h2>
+
+    <form th:action="@{/searchRecordByStaffName}" method="get">
+        <input type="text"  name="staffName" id="staffName">
+
+        <button>searchByStaffName</button>
+    </form>
+    <br>
+    <form th:action="@{/searchRecordByDate}" method="get">
+        <input type="text"  name="Date" id="Date">
+        <button>searchByDate</button>
+    </form>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>License Plate Number</th>
+            <th>Entrance Number</th>
+            <th>Date</th>
+            <th>Arrival Time</th>
+            <th>Staff Name</th>
+            <th>Status</th>
+            <th>Operation</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record:${parkingRecordList}">
+            <td th:text="${record.licensePlateNumber}">1</td>
+            <td th:text="${record.entranceNumber}">2</td>
+            <td th:text="${record.date}">3</td>
+            <td th:text="${record.arrivalTime}">4</td>
+            <td th:text="${record.staffName}">5</td>
+            <td th:switch="${record.status}">
+                <span th:case=0>In</span>
+                <span th:case=1>Out</span>
+            <td>
+                <a href="./addParkingRecord.html"
+                   th:href="@{/findParkingRecord{id}(id=${record.id})}">update</a>
+            </td>
+            </td>
+            <td>
+                <form th:action="@{/deleteParkingRecord{id}(id=${record.id})}"
+                      method="get">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+            <div style="height: 200px">test</div>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="./addParkingRecord.html", th:href="@{/insertParkingRecord}">add
+        New</a>
+    <p th:text="${msg}"> Here is to show message</p>
+</div>
+</body>
+</html>

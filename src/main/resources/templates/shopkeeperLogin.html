@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<h1>Algorithms Store</h1>
+<h2>Shopkeeper Sign In</h2>
+<form th:action="shopkeeperSuccessfullyLogin" method="post">
+    <label for="nameId">Username:</label>
+    <br>
+    <input type="text" name="username" id="nameId"
+           th:value="${username}">
+    <br>
+    <label for="passwordId">Password:</label>
+    <br>
+    <input type="password" name="password" id="passwordId" >
+    <br>
+    <button type="submit">Login</button>
+</form>
+
+<p th:text="${errorMsg}">Error message is here</p>
+
+<a href="./shopkeeperFindPassword">Forget your password?</a><br>
+<span>New to us?</span><a href="./shopkeeperRegister">Sign Up</a>
+<br>
+<a href="./userLogin">User Login</a>
+
+
+
+</body>
+</html>

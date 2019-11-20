@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1>Algorithms Store</h1>
+<h2>Sign Up</h2>
+<form th:action="shopkeeperRegister" method="post">
+    <label for="nameId">Username:</label>
+    <input type="text" name="username" id="nameId"
+           th:value="${username}"><br>
+    <label for="passwordId">Password:</label>
+    <input type="password" name="password" id="passwordId" ><br>
+    <label for="confirmPasswordId">Confirm Password:</label>
+    <input type="password" name="confirmPassword"
+           id="confirmPasswordId" ><br>
+    <input type="submit" name="submit" value="Sign up">
+</form>
+<p th:text="${errorMsg}">Error message is here</p>
+<span>Already have an account?  Click </span><a href="shopkeeperLogin">here</a><span> to login in.</span>
+</body>
+</html>
